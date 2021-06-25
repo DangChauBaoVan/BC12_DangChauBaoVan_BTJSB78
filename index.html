@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bài tập JS B7-8</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font Google  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./CSS/index.css">
+</head>
+
+<body class="bg-dark">
+    <div class="menu mx-4">
+        <button type="button" class="btn btn-warning px-4 my-2 text-white" id="openMenu"
+            style="display: none;">Menu</button>
+    </div>
+    <div class="content" id="menu">
+        <h1 class='text-white text-center mt-4'>MENU</h1>
+        <div class="content__menuBody">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="selection text-center pt-2">
+                            <a type="button" class="btn btn-warning my-2 text-white" id="select1">1. Tính
+                                tổng các số
+                                dương
+                                trong mảng</a>
+                        </div>
+                        <div class="selection text-center">
+                            <a type="button" class="btn btn-warning  my-2 text-white" id="select2">2. Đếm số dương trong
+                                mảng</a>
+                        </div>
+                        <div class="selection text-center">
+                            <a type="button" class="btn btn-warning  my-2 text-white" id="select3">3. Tìm số nhỏ nhất
+                                trong mảng</a>
+                        </div>
+                        <div class="selection text-center">
+                            <a type="button" class="btn btn-warning  my-2 text-white" id="select4">4. Tìm số dương nhỏ
+                                nhất trong
+                                mảng</a>
+                        </div>
+                        <div class="selection text-center pb-2">
+                            <a type="button" class="btn btn-warning  my-2 text-white" id="select5">5. Tìm số chẵn cuối
+                                cùng trong
+                                mảng</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="selection text-center pt-2">
+                            <a type="button" class="btn btn-warning my-2 text-white" id="select6">6. Đổi chỗ
+                                2 giá trị trong mảng</a>
+                        </div>
+                        <div class="selection text-center">
+                            <a type="button" class="btn btn-warning  my-2 text-white" id="select7">7. Sắp xếp mảng theo
+                                thứ tự tăng
+                                dần</a>
+                        </div>
+                        <div class="selection text-center">
+                            <a type="button" class="btn btn-warning  my-2 text-white" id="select8">8. Tìm số nguyên tố
+                                đầu tiên</a>
+                        </div>
+                        <div class="selection text-center">
+                            <a type="button" class="btn btn-warning  my-2 text-white" id="select9">9.Nhập thêm mảng số thực. Đếm số dương trong
+                                mảng.</a>
+                        </div>
+                        <div class="selection text-center pb-2">
+                            <a type="button" class="btn btn-warning  my-2 text-white" id="select10">10. So sánh số lượng
+                                số dương và
+                                âm</a>
+                        </div>
+                    </div>
+
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <button type="button" class="btn btn-warning mx-4 my-2 text-white" id="taoMang">Tạo Mảng</button>
+
+    <div class="mx-4" id="inputArray" style="display: none;">
+        <h1 class="text-white">Bạn hãy nhập vào mảng gồm 10 phần tử là các số nguyên</h1>
+        <div class="form-group text-white" id="inputGroup">
+            <label id="lbThongBao">Mời bạn nhập vào phần tử thứ 0: </label>
+            <input type="number" class="form-control w-25" name="" id="inpuElement" placeholder="Nhập phần tử">
+        </div>
+        <button type="button" class="btn btn-warning px-4 my-2 text-white" id="themPhanTu">Thêm</button>
+    </div>
+    <div class="showArray mx-4" id="showArray" style="display: none;">
+        <h2 class="text-white">Mảng Bạn Vừa Nhập Là: </h2>
+        <table id="showTable" class="table table-bodered text-center text-white"></table>
+    </div>
+    
+    <div class="showResultB6 mx-4" style="display: none;" id="showResultB6">
+        <div class="form-group text-white">
+            <label>Mời bạn nhập vào vị trí 1: </label>
+            <input type="number" class="form-control w-25" name="" id="ipViTri1" placeholder="Nhập vị trí 1">
+            <label>Mời bạn nhập vào vị trí 2: </label>
+            <input type="number" class="form-control w-25" name="" id="ipViTri2" placeholder="Nhập vị trí 2">
+        </div>
+        <button type="button" class="btn btn-warning px-4 my-2 text-white" id="doiViTri">Hoán Đổi</button>
+        <div class="showArray mx-4" id="showArray2" style="display: none;">
+            <h2 class="text-white" id="tbViTriHoanDoi">Mảng Bạn Sau Khi Đổi Chỗ: </h2>
+            <table id="showTable2" class="table table-bodered text-center text-white"></table>
+        </div>
+        <button type="button" class="btn btn-warning px-4 my-2 text-white" id="closeResultB6">Clear</button>
+    </div>
+    <div class="showResultB7" style="display: none;" id="showResultB7">
+        <div class="showArray mx-4" id="showArray3" style="display: none;">
+            <h2 class="text-white">Mảng Bạn Sau Khi Sắp Xếp: </h2>
+            <table id="showTable3" class="table table-bodered text-center text-white"></table>
+        </div>
+        <button type="button" class="btn btn-warning px-4 my-2 text-white" id="closeResultB7">Clear</button>
+    </div>
+    <div class="showResultB9 mx-4" style="display: none;" id="showResultB9">
+        <div class="taoMangB9" id='taoMangThuc'>
+            <h1 class="text-white">Bạn hãy nhập vào mảng gồm 10 phần tử là các số thực</h1>
+            <div class="form-group text-white">
+                <label id="lbNhapMang">Mời bạn nhập vào phần tử thứ 0: </label>
+                <input type="number" class="form-control w-25" name="" id="ipEle" placeholder="Nhập phần tử">
+            </div>
+            <button type="button" class="btn btn-warning px-4 my-2 text-white" id="addEle">Thêm</button>
+        </div>
+        <div class="showArray" id="showArrayReal" style="display: none;">
+            <h2 class="text-white">Mảng Số Thực Bạn Vừa Nhập Là: </h2>
+            <table id="showTableReal" class="table table-bodered text-center text-white"></table>
+            <button type="button" class="btn btn-warning px-4 my-2 text-white" id="demSoDuong">Đếm Số Dương</button>
+        </div>
+        <button type="button" class="btn btn-warning   text-white" id="closeResultB9">Clear</button>
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
